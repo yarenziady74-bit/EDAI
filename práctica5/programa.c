@@ -138,9 +138,6 @@ int main() {
     }
 
 
-    printf("\nComparación\n");
-    printf("Pila LIFO (último en entrar, primero en salir)\n");
-    printf("Cola FIFO (primero en entrar, primero en salir)\n");
 
     return 0;
 }
