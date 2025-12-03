@@ -10,7 +10,7 @@ void insertarInicio(struct Nodo **cabeza, int valor) {
     struct Nodo *nuevoNodo = (struct Nodo *)malloc(sizeof(struct Nodo));
     
     if (nuevoNodo == NULL) {
-        printf("Error: no se pudo asignar memoria para el nuevo nodo\n");
+        printf("Error no se pudo asignar memoria para el nuevo nodo\n");
         return;
     }
     
@@ -62,7 +62,7 @@ void eliminar(struct Nodo **cabeza, int valor) {
         actual = actual->siguiente;
     }
     if (actual == NULL) {
-        printf("Error: El valor %d no se encntró en la lista\n", valor);
+        printf("Error el valor %d no se encntró en la lista\n", valor);
         return;
     }
 
@@ -108,7 +108,7 @@ int main() {
         recorrer(cabeza);
     }
     
-    printf("Estado de la lista antes de eliminar:\n");
+    printf("Lista antes de eliminar:\n");
     recorrer(cabeza);
 
     printf("\nQué valor deseas eliminar de la lista? ");
@@ -120,7 +120,7 @@ int main() {
     
     eliminar(&cabeza, valorEliminar);
     
-    printf("Lista actualizada después de eliminar:\n");
+    printf("Lista actualizada:\n");
     recorrer(cabeza);
 
     liberar(&cabeza);
