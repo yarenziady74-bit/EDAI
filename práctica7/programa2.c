@@ -22,7 +22,7 @@ void recorrerSimple(struct Nodo *cabeza) {
         printf("La lista está vacía\n");
         return;
     }
-    printf("\nContenido de la lista simple: ");
+    printf("\nContenido de la lista: ");
     struct Nodo *actual = cabeza;
     while (actual != NULL) {
         printf(" (%d -> ", actual->dato); 
@@ -53,7 +53,7 @@ void eliminarSimple(struct Nodo **cabeza, int valor) {
     }
 
     if (actual == NULL) {
-        printf("Error, el valor %d no se encontró en la lista\n", valor);
+        printf("Error, el valor no se encontró en la lista\n", valor);
         return;
     }
 
@@ -82,7 +82,7 @@ int main() {
     if (scanf("%d", &numValores) != 1 || numValores < 0) return 1;
     
     for (int i = 0; i < numValores; i++) {
-        printf("Introduce el valor %d: ", i + 1);
+        printf("Introduce el valor: ", i + 1);
         if (scanf("%d", &valor) != 1) return 1;
         insertarInicioSimple(&cabezaSimple, valor);
         recorrerSimple(cabezaSimple);
