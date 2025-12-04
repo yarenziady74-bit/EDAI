@@ -7,23 +7,20 @@ int main () {
 	int *arr2 = NULL;
 	int i; 
 	
-	//Reserva con malloc
 	printf("Cuántos enteros quieres almacenar?");
 	scanf("%d",&n);
 	
 	arr = (int*)malloc (n* sizeof(int));
 	if (arr == NULL){
-		printf("Error: No se pudo reservar memoria con malloc\n");
+		printf("Error, no se pudo reservar memoria con malloc\n");
 		return 1;
 		}
 		
-		printf ("\nValores iniciales con malloc  (basura):\n");
+		printf ("\nValores iniciales con malloc:\n");
 		for (i=0; i<n; i++){
 			printf("%d", arr[i]);
 				}
 			printf("n\n");
-			
-	//Reservar con calloc
 			
 			arr2 = (int*)calloc (n, sizeof(int));
 			
@@ -38,28 +35,26 @@ int main () {
 				printf ("%d", arr2[i]);
 			}
 			printf("n\n");
-			
-	//Llenar el arreglo
-    	printf("Ingresa %d valores enteros:\n", n);
+		
+    	printf("Ingresa %d valores:\n", n);
 
     for (i = 0; i < n; i++) {
         printf("Valor %d: ", i + 1);
         scanf("%d", &arr2[i]);
     }
 
-    printf("\nArreglo arr2 lleno:\n");
+    printf("\nArreglo lleno:\n");
     for (i = 0; i < n; i++) {
         printf("%d ", arr2[i]);
     }
     printf("\n\n");
     
-    //Redimensionar con realloc
     printf("Ingresa el nuevo tamaño del arreglo: ");
     scanf("%d", &m);
 
     int *temp = realloc(arr2, m * sizeof(int));
     if (temp == NULL) {
-        printf("Error: no se pudo redimensionar con realloc\n");
+        printf("Error no se pudo redimensionar con realloc\n");
         free(arr);
         free(arr2);
         return 1;
@@ -79,8 +74,6 @@ int main () {
         printf("%d ", arr2[i]);
     }
     printf("\n\n");
-    
-    //Paso 5: Liberar memoria//
 
     free(arr);
     free(arr2);
