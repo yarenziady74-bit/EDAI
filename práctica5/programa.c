@@ -62,7 +62,7 @@ int enqueue(Cola *c, int valor) {
 
 int dequeue(Cola *c, int *valor) {
     if (c->frente > c->final) {
-        printf("La cola está vacía.\n");
+        printf("la cola está vacía\n");
         return 0;
     }
     *valor = c->datos[(c->frente)++];
@@ -95,7 +95,7 @@ int main() {
     scanf("%d", &n);
 
     for (i = 0; i < n && i < TAM; i++) {
-        printf("Elemento %d a push: ", i + 1);
+        printf("Elemento: ", i + 1);
         scanf("%d", &valor);
         push(&pila, valor);
         mostrarPila(pila);
@@ -107,7 +107,7 @@ int main() {
 
     for (i = 0; i < n; i++) {
         if (pop(&pila, &extraido)) {
-            printf("Se extrajo: %d\n", extraido);
+            printf("Se quitó: %d\n", extraido);
         }
         mostrarPila(pila);
     }
@@ -120,7 +120,7 @@ int main() {
     scanf("%d", &n);
 
     for (i = 0; i < n && i < TAM; i++) {
-        printf("Elemento %d a enqueue: ", i + 1);
+        printf("Elemento ingresado: ", i + 1);
         scanf("%d", &valor);
         enqueue(&cola, valor);
         mostrarCola(cola);
@@ -132,7 +132,7 @@ int main() {
 
     for (i = 0; i < n; i++) {
         if (dequeue(&cola, &extraido)) {
-            printf("Se extrajo: %d\n", extraido);
+            printf("Se quitó: %d\n", extraido);
         }
         mostrarCola(cola);
     }
