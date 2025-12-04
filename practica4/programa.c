@@ -5,7 +5,7 @@ int main () {
     int n, m;
     int *arr = NULL;
     int *arr2 = NULL;
-    int i; 
+    int i;
 
     printf("Cuántos enteros quieres almacenar? ");
     scanf("%d", &n);
